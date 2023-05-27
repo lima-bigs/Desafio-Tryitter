@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "5cUxG3AcGvOJ2Cj9tQcmHpihA7CTyJa190x64d0syhVcwlFkiVpQyMZAjwrMpa1kgxaUp6tRnTt1JuAvVlrvYg==",
+  "success": true,
+  "projectFilePath": "/home/gustavo/Trybe-C#-Projetos/Projeto/UltimoDesafio/Back-end/tryitter-back-end/tryitter-back-end.csproj",
+  "expectedPackageFiles": [
+    "/home/gustavo/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/home/gustavo/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/home/gustavo/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/home/gustavo/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/home/gustavo/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/home/gustavo/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}

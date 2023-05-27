@@ -1,0 +1,69 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/gustavo/Trybe-C#-Projetos/Projeto/UltimoDesafio/Back-end/tryitter-back-end/tryitter-back-end.csproj": {}
+  },
+  "projects": {
+    "/home/gustavo/Trybe-C#-Projetos/Projeto/UltimoDesafio/Back-end/tryitter-back-end/tryitter-back-end.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/gustavo/Trybe-C#-Projetos/Projeto/UltimoDesafio/Back-end/tryitter-back-end/tryitter-back-end.csproj",
+        "projectName": "tryitter-back-end",
+        "projectPath": "/home/gustavo/Trybe-C#-Projetos/Projeto/UltimoDesafio/Back-end/tryitter-back-end/tryitter-back-end.csproj",
+        "packagesPath": "/home/gustavo/.nuget/packages/",
+        "outputPath": "/home/gustavo/Trybe-C#-Projetos/Projeto/UltimoDesafio/Back-end/tryitter-back-end/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gustavo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.116/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
