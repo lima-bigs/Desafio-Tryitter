@@ -4,7 +4,7 @@ import Login from './Pages/Login';
 
 function App() {
   return (
-    <div>
+    <div className="container p-4">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />

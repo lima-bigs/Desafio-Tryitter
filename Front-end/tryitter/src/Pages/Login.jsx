@@ -12,11 +12,11 @@ function Login() {
   };
 
   return (
-    <div>
-      <div>
+    <div className="container row border border-sucess">
+      <div className="row-cols-6 row-cols-sm-12 border border-sucess">
         logo
       </div>
-      <div>
+      <div className="row-cols-6 row-cols-sm-12">
         <h1>Realizar login</h1>
         <form onSubmit={handleSubmit}>
           <Input
@@ -30,7 +30,7 @@ function Login() {
             type="password"
             name="password"
             value={password}
-            placeholder="E-mail"
+            placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
 
