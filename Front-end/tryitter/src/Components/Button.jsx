@@ -1,24 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Button({ children, disable, onClick }) {
+function Button({
+  children, click, sty, dataTestId,
+}) {
   return (
     <button
       type="button"
-      className="btn btn-primary mb-3"
-      disabled={disable}
-      onClick={onClick}
+      className={`btn btn-danger mt-3 ${sty}`}
+      onClick={click}
+      data-testid={dataTestId}
     >
       {children}
     </button>
   );
 }
 
-Button.defaultProps = { disable: false, onClick: () => {} };
+Button.defaultProps = {
+  sty: '',
+  children: '',
+  click: () => {},
+  dataTestId: '',
+};
 Button.propTypes = {
-  children: PropTypes.node.isRequired,
-  disable: PropTypes.bool,
-  onClick: PropTypes.func,
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string,
+  ]),
+  click: PropTypes.func,
+  sty: PropTypes.string,
+  dataTestId: PropTypes.string,
 };
 
 export default Button;

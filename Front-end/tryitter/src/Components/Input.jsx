@@ -2,37 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Input({
-  type,
-  name,
-  onChange,
-  placeholder,
-  className,
-  value,
+  type, name, value, handleChange, sty,
 }) {
   return (
-    <label htmlFor={name}>
-      {placeholder}
+    <label htmlFor={name} className="input-group mt-3">
       <input
         type={type}
-        value={value}
-        name={name}
         id={name}
-        className={`form-control max-input ${className}`}
-        // placeholder={placeholder}
-        onChange={onChange}
+        name={name}
+        data-testid={name}
+        onChange={handleChange}
+        value={value}
+        className={`form-control ${sty}`}
+        placeholder={name}
       />
     </label>
   );
 }
 
-Input.defaultProps = { onChange: () => {}, className: '' };
+Input.defaultProps = { value: '', sty: '' };
 Input.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  onChange: PropTypes.func,
-  placeholder: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  handleChange: PropTypes.func.isRequired,
+  sty: PropTypes.string,
 };
 
 export default Input;
