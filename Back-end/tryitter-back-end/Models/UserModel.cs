@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace tryitter_back_end.Models
 {
     public class User
