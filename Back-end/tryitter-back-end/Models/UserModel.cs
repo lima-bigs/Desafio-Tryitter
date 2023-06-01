@@ -1,4 +1,4 @@
-using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace tryitter_back_end.Models
 {
@@ -10,8 +10,8 @@ namespace tryitter_back_end.Models
         public string Password { get; set; } = default!;
         public string Email { get; set; } = default!;
         public string Modulo { get; set; } = default!;
-        public string Status { get; set; } = default!;
+        public string? Status { get; set; } = default!;
 
-        virtual List<Post>? Posts { get; set; } = default!;
+        public virtual List<Post>? Posts { get; set; } = default!;
     }
 }

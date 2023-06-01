@@ -12,12 +12,8 @@ public class BlogContext : DbContext
   {
     if (!optionsBuilder.IsConfigured)
     {
-      optionsBuilder.UseSqlServer(@"
-      Server=127.0.0.1;
-      Database=tryitter_db;
-      User=SA;
-      Password=Password12!;
-    ");
+      var stringConection = @"Server=myServerAddress;Database=myDataBase;Uid=root;Pwd=aninha11;";
+      optionsBuilder.UseMySql(stringConection, ServerVersion.AutoDetect(stringConection));
     }
   }
 

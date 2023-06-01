@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 public class TryitterRepository
 {
   protected readonly DbContext _context;
-  public BlogRepository(DbContext context)
+  public TryitterRepository(DbContext context)
   {
     _context = context;
   }
