@@ -45,8 +45,6 @@
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Debug/net6.0/Microsoft.SqlServer.Server.dll
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Debug/net6.0/Mono.TextTemplating.dll
-/home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Debug/net6.0/MySqlConnector.dll
-/home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll

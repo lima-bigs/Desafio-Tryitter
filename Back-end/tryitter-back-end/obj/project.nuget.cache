@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kpQFc1o3ATFjMGhosNRQPuuk1yaOMVo3SnQDRSgMX7CdO7NBcI0gDvywBLhwVcyOUBQIcgkIbDC/Ud32g6h0Fw==",
+  "dgSpecHash": "VUEu0a0jGUVREN6Vm4yGTG6XW5cpqugmz6diB9F3euPcmXLd4BE1AydVZUI6m3wxLysaMkQ0kgKxm4eK6nskrA==",
   "success": true,
   "projectFilePath": "/home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/tryitter-back-end.csproj",
   "expectedPackageFiles": [
@@ -44,8 +44,6 @@
     "/home/bigs/.nuget/packages/microsoft.win32.registry/5.0.0/microsoft.win32.registry.5.0.0.nupkg.sha512",
     "/home/bigs/.nuget/packages/microsoft.win32.systemevents/5.0.0/microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "/home/bigs/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
-    "/home/bigs/.nuget/packages/mysqlconnector/2.2.5/mysqlconnector.2.2.5.nupkg.sha512",
-    "/home/bigs/.nuget/packages/pomelo.entityframeworkcore.mysql/7.0.0/pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512",
     "/home/bigs/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "/home/bigs/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "/home/bigs/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

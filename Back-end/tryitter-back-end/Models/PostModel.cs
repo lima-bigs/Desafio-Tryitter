@@ -6,6 +6,8 @@ namespace tryitter_back_end.Models
     {
         [Key]
         public int PostId { get; set; }
+
+        [MaxLength(300, ErrorMessage = "O texto deve ter no máximo 300 caracteres.")]
         public string? Content { get; set; } = default!;
         public string? Image { get; set; } = default!;
         public int UserId { get; set; } = default!;

@@ -1,9 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using tryitter_back_end.Repository;
 
 public class TryitterRepository
 {
-  protected readonly DbContext _context;
-  public TryitterRepository(DbContext context)
+  protected readonly TryitterContext _context;
+  public TryitterRepository(TryitterContext context)
   {
     _context = context;
   }
