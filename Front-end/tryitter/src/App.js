@@ -15,7 +15,7 @@ function App() {
 
   return (
     <MyContext.Provider value={contextValue}>
-      <div>
+      <div className="container">
         <BrowserRouter>
           <Routes />
         </BrowserRouter>
