@@ -17,8 +17,8 @@ public class TryitterContext : DbContext
     {
       // var stringConection = @"Server=myServerAddress;Database=myDataBase;Uid=root;Pwd=aninha11;";
       // optionsBuilder.UseMySql(stringConection, ServerVersion.AutoDetect(stringConection));
-      var stringConection = @"Server=127.0.0.1;Database=tryitterDb;User=SA;Password=Password12!";
-      optionsBuilder.UseSqlServer(stringConection);
+      var stringConnection = "Server=127.0.0.1;Database=tryitterDb;User=SA;Password=Password12!";
+      optionsBuilder.UseSqlServer(stringConnection);
     }
   }
 
