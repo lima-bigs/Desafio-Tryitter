@@ -17,8 +17,8 @@ public class TryitterContext : DbContext
     {
       // var stringConection = @"Server=myServerAddress;Database=myDataBase;Uid=root;Pwd=aninha11;";
       // optionsBuilder.UseMySql(stringConection, ServerVersion.AutoDetect(stringConection));
-      var stringConnection = "Server=127.0.0.1;Database=tryitterDb;User=SA;Password=Password12!";
-      optionsBuilder.UseSqlServer(stringConnection);
+      var connectionString = "Server=tcp:tryitter-server.database.windows.net,1433;Initial Catalog=tryitter_db;Persist Security Info=False;User ID=TryitterAdmin;Password=Tryitter@1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+      optionsBuilder.UseSqlServer(connectionString);
     }
   }
 
