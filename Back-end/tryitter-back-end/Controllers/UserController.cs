@@ -1,31 +1,59 @@
 using Microsoft.AspNetCore.Mvc;
+using tryitter_back_end.Models;
 
 namespace tryitter_back_end.Controllers;
 
 [ApiController]
-[Route("[controller]")]
-public class WeatherForecastController : ControllerBase
+[Route("user")]
+public class UserController : ControllerBase
 {
-    private static readonly string[] Summaries = new[]
-    {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
-    private readonly ILogger<WeatherForecastController> _logger;
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
-    {
-        _logger = logger;
-    }
-
-    [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
-    {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+    private readonly TryitterRepository _repository;
+        public UserController(TryitterRepository repository)
         {
-            Date = DateTime.Now.AddDays(index),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-        })
-        .ToArray();
-    }
+            _repository = repository;
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetUser(int id)
+        {
+            var user = _repository.Get<User>(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return Ok(user);
+        }
+
+        [HttpGet]
+        public IActionResult GetUsers()
+        {
+            return Ok(_repository.GetAll<User>());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(User user)
+        {
+            await _repository.Add<User>(user);
+
+            return StatusCode(201, user);
+        }
+        [HttpPut]
+        public IActionResult Update(int id, User user)
+        {
+            var userInDb = _repository.Get<User>(id);
+
+            if (userInDb == null) return NotFound("Usuário não encontrado");
+
+            userInDb.Name = user.Name;
+            userInDb.Email = user.Email;
+            userInDb.Modulo = user.Modulo;
+            userInDb.Status = user.Status;
+            userInDb.UpdatedAt = DateTime.Now;
+
+            _repository.Update<User>(userInDb);
+
+            return Ok("Usuário atualizado com sucesso");
+        }
+
+        // [HttpDelete]
 }
