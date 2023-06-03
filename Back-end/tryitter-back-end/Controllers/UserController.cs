@@ -50,7 +50,6 @@ public class UserController : ControllerBase
             userInDb.Email = user.Email;
             userInDb.Modulo = user.Modulo;
             userInDb.Status = user.Status;
-            userInDb.Atualizado_em = DateTime.Now;
 
             await _repository.Update(userInDb);
 
