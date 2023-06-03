@@ -32,7 +32,7 @@ public class PostRepository
   public virtual async Task Delete(Post post)
   {
     _context.Remove(post);
-    _context.SaveChanges();
+    await _context.SaveChangesAsync();
   }
   public virtual async Task Update(Post post)
   {

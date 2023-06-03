@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using tryitter_back_end.Models;
+using tryitter_back_end.Repositories;
 
 namespace tryitter_back_end.Controllers;
 
@@ -7,8 +8,8 @@ namespace tryitter_back_end.Controllers;
 [Route("user")]
 public class UserController : ControllerBase
 {
-    private readonly TryitterRepository _repository;
-        public UserController(TryitterRepository repository)
+    private readonly UserRepository _repository;
+        public UserController(UserRepository repository)
         {
             _repository = repository;
         }
@@ -16,7 +17,7 @@ public class UserController : ControllerBase
         [HttpGet("{id}")]
         public IActionResult GetUser(int id)
         {
-            var user = _repository.Get<User>(id);
+            var user = _repository.Get(id);
             if (user == null)
             {
                 return NotFound();
@@ -27,20 +28,20 @@ public class UserController : ControllerBase
         [HttpGet]
         public IActionResult GetUsers()
         {
-            return Ok(_repository.GetAll<User>());
+            return Ok(_repository.GetAll());
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(User user)
         {
-            await _repository.Add<User>(user);
+            await _repository.Add(user);
 
             return StatusCode(201, user);
         }
         [HttpPut]
-        public IActionResult Update(int id, User user)
+        public async Task<IActionResult> Update(int id, User user)
         {
-            var userInDb = _repository.Get<User>(id);
+            var userInDb = await _repository.Get(id);
 
             if (userInDb == null) return NotFound("Usuário não encontrado");
 
@@ -50,7 +51,7 @@ public class UserController : ControllerBase
             userInDb.Status = user.Status;
             userInDb.UpdatedAt = DateTime.Now;
 
-            _repository.Update<User>(userInDb);
+            await _repository.Update(userInDb);
 
             return Ok("Usuário atualizado com sucesso");
         }

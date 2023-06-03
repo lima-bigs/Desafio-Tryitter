@@ -30,8 +30,8 @@ public class UserRepository
 
   public virtual async Task Delete(User user)
   {
-    _context.Remove(user);
-    _context.SaveChanges();
+    _context.Users.Remove(user);
+    await _context.SaveChangesAsync();
   }
   public virtual async Task Update(User user)
   {
