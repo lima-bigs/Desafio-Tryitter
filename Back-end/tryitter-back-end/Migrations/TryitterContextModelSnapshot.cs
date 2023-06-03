@@ -81,17 +81,12 @@ namespace tryitter_back_end.Migrations
             modelBuilder.Entity("tryitter_back_end.Models.Post", b =>
                 {
                     b.HasOne("tryitter_back_end.Models.User", "User")
-                        .WithMany("Posts")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("tryitter_back_end.Models.User", b =>
-                {
-                    b.Navigation("Posts");
                 });
 #pragma warning restore 612, 618
         }

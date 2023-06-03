@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace tryitter_back_end.Models
 {
@@ -12,6 +13,7 @@ namespace tryitter_back_end.Models
         public string Modulo { get; set; } = default!;
         public string? Status { get; set; } = default!;
         
-        public virtual List<Post>? Posts { get; set; } = default!;
+        // [InverseProperty("User")]
+        // public List<Post>? Posts { get; set; } = default!;
     }
 }
