@@ -23,10 +23,10 @@ public class TryitterContext : DbContext
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
-  //   modelBuilder.Entity<Post>()
-  //     .HasOne(u => u.User)
-  //     .WithMany(p => p.Posts)
-  //     .HasForeignKey(u => u.UserId);
+    // modelBuilder.Entity<Post>()
+    //   .HasOne(u => u.User)
+    //   .WithMany(p => p.Posts)
+    //   .HasForeignKey(u => u.UserId);
 
     modelBuilder.ApplyConfiguration(new UserMap());
     modelBuilder.ApplyConfiguration(new PostMap());

@@ -13,9 +13,12 @@ namespace tryitter_back_end.Repositories
 
     public virtual async Task<Post> Get(int id)
     {
-      var post = await _context.Posts.Include(u => u.User).FirstOrDefaultAsync(p => p.PostId == id);
-      return post;
-      // return await _context.Posts.FindAsync(id);
+      return await _context.Posts.Include(u => u.User).FirstOrDefaultAsync(p => p.PostId == id);
+    }
+    
+    public virtual async Task<List<Post>> GetByUser(int id)
+    {
+      return await _context.Posts.Where(u => u.UserId == id).ToListAsync();
     }
 
     public virtual async Task<List<Post>> GetAll()
