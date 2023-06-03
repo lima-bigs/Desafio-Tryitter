@@ -15,46 +15,57 @@ public class UserController : ControllerBase
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetUser(int id)
+        public async Task<ActionResult<User>> Get(int id)
         {
-            var user = _repository.Get(id);
+            var user = await _repository.Get(id);
             if (user == null)
             {
-                return NotFound();
+                return NotFound("Usuário com id:{id} não existe.");
             }
             return Ok(user);
         }
 
         [HttpGet]
-        public IActionResult GetUsers()
+        public async Task<ActionResult<List<User>>> GetAll()
         {
-            return Ok(_repository.GetAll());
+            return Ok(await _repository.GetAll());
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(User user)
+        public async Task<ActionResult> Add(User user)
         {
-            await _repository.Add(user);
+            var addedUser = await _repository.Add(user);
 
-            return StatusCode(201, user);
+            return StatusCode(201, addedUser);
         }
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, User user)
         {
             var userInDb = await _repository.Get(id);
 
             if (userInDb == null) return NotFound("Usuário não encontrado");
 
+            userInDb.UserId = id;
             userInDb.Name = user.Name;
             userInDb.Email = user.Email;
             userInDb.Modulo = user.Modulo;
             userInDb.Status = user.Status;
-            userInDb.UpdatedAt = DateTime.Now;
+            userInDb.Atualizado_em = DateTime.Now;
 
             await _repository.Update(userInDb);
 
             return Ok("Usuário atualizado com sucesso");
         }
 
-        // [HttpDelete]
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var userInDb = await _repository.Get(id);
+
+            if (userInDb == null) return NotFound("Usuário não encontrado");
+
+            await _repository.Delete(userInDb);
+
+            return Ok("Usuário apagado com sucesso");
+        }
 }

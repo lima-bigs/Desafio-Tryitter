@@ -38,5 +38,4 @@ public class UserRepository
     _context.Update(user);
     await _context.SaveChangesAsync();
   }
-
 }

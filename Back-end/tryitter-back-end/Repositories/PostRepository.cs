@@ -39,5 +39,4 @@ public class PostRepository
     _context.Update(post);
     await _context.SaveChangesAsync();
   }
-
 }

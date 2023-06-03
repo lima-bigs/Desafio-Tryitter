@@ -11,8 +11,8 @@ namespace tryitter_back_end.Models
         public string Email { get; set; } = default!;
         public string Modulo { get; set; } = default!;
         public string? Status { get; set; } = default!;
-        public DateTime? CreatedAt { get; set; } = default!;
-        public DateTime? UpdatedAt { get; set; } = default!;
+        public DateTime? Criado_em { get; set; } = default!;
+        public DateTime? Atualizado_em { get; set; } = default!;
 
         public virtual List<Post>? Posts { get; set; } = default!;
     }
