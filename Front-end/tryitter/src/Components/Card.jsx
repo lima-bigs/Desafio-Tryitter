@@ -12,7 +12,7 @@ function Card({ item }) {
         </div>
       </div>
       <img src="" alt="" />
-      <p>{item.title}</p>
+      <p>{item.content}</p>
       <p>texto dhisahdia disadhas dnasiidaos jdioasioda</p>
       <div className="d-flex justify-content-around mb-3">
         <div>
@@ -28,8 +28,10 @@ function Card({ item }) {
 
 Card.propTypes = {
   item: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
+    postId: PropTypes.number.isRequired,
+    content: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    userId: PropTypes.number.isRequired,
   }).isRequired,
 };
 

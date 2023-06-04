@@ -16,17 +16,19 @@ function Login() {
   const { active, setActive } = useContext(MyContext);
 
   const handleClick = async () => {
-    if (isValidEmail(email) && isValidPassword(password, MIN_PASSWORD_LANGTH)) {
-      const body = { email, password };
-      const login = await loginUser('/user', body);
-      setMsgErro('');
-      localStorage.setItem('user', JSON.stringify(login));
-      setActive(!active);
-      setEmail('');
-      setPassword('');
-      history('/home');
-    } else {
-      setMsgErro(true);
+    try {
+      if (isValidEmail(email) && isValidPassword(password, MIN_PASSWORD_LANGTH)) {
+        const body = { email, password };
+        const login = await loginUser('/user', body);
+        setMsgErro('');
+        localStorage.setItem('user', JSON.stringify(login));
+        setActive(!active);
+        setEmail('');
+        setPassword('');
+        history('/home');
+      }
+    } catch (error) {
+      setMsgErro(true, error);
     }
   };
 
