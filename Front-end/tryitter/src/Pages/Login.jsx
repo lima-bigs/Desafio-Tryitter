@@ -4,6 +4,7 @@ import Input from '../Components/Input';
 import Button from '../Components/Button';
 import MyContext from '../MyContext/MyContext';
 import { isValidEmail, isValidPassword } from '../Utils/Validacao';
+import { loginUser } from '../Services/Request';
 import '../App.css';
 
 function Login() {
@@ -12,9 +13,15 @@ function Login() {
   const [password, setPassword] = useState('');
   const [msgErro, setMsgErro] = useState(false);
   const { MIN_PASSWORD_LANGTH } = useContext(MyContext);
+  const { active, setActive } = useContext(MyContext);
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (isValidEmail(email) && isValidPassword(password, MIN_PASSWORD_LANGTH)) {
+      const body = { email, password };
+      const login = await loginUser('/user', body);
+      setMsgErro('');
+      localStorage.setItem('user', JSON.stringify(login));
+      setActive(!active);
       setEmail('');
       setPassword('');
       history('/home');

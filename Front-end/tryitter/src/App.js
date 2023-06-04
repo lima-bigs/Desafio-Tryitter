@@ -6,11 +6,13 @@ import { BrowserRouter } from 'react-router-dom';
 function App() {
   const MIN_PASSWORD_LANGTH = 6;
   const [loading, setLoading] = useState(false);
+  const [active, setActive] = useState(false);
 
 
   const contextValue = {
     MIN_PASSWORD_LANGTH,
     loading, setLoading,
+    active, setActive
   };
 
   return (
