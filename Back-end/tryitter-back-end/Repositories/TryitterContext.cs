@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using tryitter_back_end.Map;
 using tryitter_back_end.Models;
 
 namespace tryitter_back_end.Repositories;
