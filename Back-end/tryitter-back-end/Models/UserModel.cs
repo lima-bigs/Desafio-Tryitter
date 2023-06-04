@@ -14,6 +14,6 @@ namespace tryitter_back_end.Models
         public string? Status { get; set; } = default!;
         
         // [InverseProperty("User")]
-        // public List<Post>? Posts { get; set; } = default!;
+        // public virtual List<Post>? Posts { get; set; } = default!;
     }
 }
