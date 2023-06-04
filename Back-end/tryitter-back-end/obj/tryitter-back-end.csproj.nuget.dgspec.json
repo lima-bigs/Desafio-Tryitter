@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/gustavo/Trybe-C#-Projetos/Projeto/UltimoDesafio/Back-end/tryitter-back-end/tryitter-back-end.csproj": {}
+    "/home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/tryitter-back-end.csproj": {}
   },
   "projects": {
-    "/home/gustavo/Trybe-C#-Projetos/Projeto/UltimoDesafio/Back-end/tryitter-back-end/tryitter-back-end.csproj": {
+    "/home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/tryitter-back-end.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gustavo/Trybe-C#-Projetos/Projeto/UltimoDesafio/Back-end/tryitter-back-end/tryitter-back-end.csproj",
+        "projectUniqueName": "/home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/tryitter-back-end.csproj",
         "projectName": "tryitter-back-end",
-        "projectPath": "/home/gustavo/Trybe-C#-Projetos/Projeto/UltimoDesafio/Back-end/tryitter-back-end/tryitter-back-end.csproj",
-        "packagesPath": "/home/gustavo/.nuget/packages/",
-        "outputPath": "/home/gustavo/Trybe-C#-Projetos/Projeto/UltimoDesafio/Back-end/tryitter-back-end/obj/",
+        "projectPath": "/home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/tryitter-back-end.csproj",
+        "packagesPath": "/home/bigs/.nuget/packages/",
+        "outputPath": "/home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/gustavo/.nuget/NuGet/NuGet.Config"
+          "/home/bigs/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -38,6 +38,30 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
