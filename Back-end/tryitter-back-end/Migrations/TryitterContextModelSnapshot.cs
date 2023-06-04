@@ -60,11 +60,9 @@ namespace tryitter_back_end.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Modulo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")

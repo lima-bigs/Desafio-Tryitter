@@ -20,7 +20,7 @@ public class UserController : ControllerBase
             var user = await _repository.Get(id);
             if (user == null)
             {
-                return NotFound("Usuário com id:{id} não existe.");
+                return NotFound($"Usuário com id:{id} não existe.");
             }
             return Ok(user);
         }
