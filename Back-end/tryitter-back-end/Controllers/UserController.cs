@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using tryitter_back_end.Models;
 using tryitter_back_end.Repositories;
@@ -6,6 +7,7 @@ namespace tryitter_back_end.Controllers;
 
 [ApiController]
 [Route("user")]
+[Authorize]
 public class UserController : ControllerBase
 {
     private readonly UserRepository _repository;

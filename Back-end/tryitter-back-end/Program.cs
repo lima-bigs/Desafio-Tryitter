@@ -1,3 +1,9 @@
+using System.Security.Claims;
+using System.Text;
+using tryitter_back_end.Constants;
+using tryitter_back_end.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using tryitter_back_end.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +20,30 @@ builder.Services.AddScoped<PostRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors();
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.SaveToken = true;
+    options.RequireHttpsMetadata = false;
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(TokenConstant.Secret))
+    };
+});
+
+// Adicionar POLICY CLAIMS BASED aqui!
+builder.Services.AddAuthorization (options => {
+    options.AddPolicy("Usuario", policy => {
+    policy.RequireClaim("User");
+    });
+});
 
 var app = builder.Build();
 
@@ -32,6 +62,8 @@ app.UseCors(c =>
     c.AllowAnyMethod();
     c.AllowAnyOrigin();
 });
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
