@@ -6,6 +6,7 @@
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Release/net6.0/publish/tryitter-back-end.pdb
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Release/net6.0/publish/Azure.Core.dll
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Release/net6.0/publish/Azure.Identity.dll
+/home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Release/net6.0/publish/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Release/net6.0/publish/Microsoft.Bcl.AsyncInterfaces.dll
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Release/net6.0/publish/Microsoft.Data.SqlClient.dll
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Release/net6.0/publish/Microsoft.EntityFrameworkCore.dll
