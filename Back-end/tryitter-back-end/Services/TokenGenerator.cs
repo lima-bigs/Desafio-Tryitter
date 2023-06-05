@@ -15,7 +15,7 @@ namespace tryitter_back_end.Services
             var tokenHandler = new JwtSecurityTokenHandler();
             var tokenDescriptor = new SecurityTokenDescriptor()
             {
-                // Subject = AddClaims(user),
+                Subject = AddClaims(user),
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(Encoding.ASCII.GetBytes(TokenConstant.Secret)),
                     SecurityAlgorithms.HmacSha256Signature
@@ -27,13 +27,13 @@ namespace tryitter_back_end.Services
             return tokenHandler.WriteToken(token);
         }
 
-        // private ClaimsIdentity AddClaims (User user)
-        // {
-        //     var claims = new ClaimsIdentity();
+        private ClaimsIdentity AddClaims (User user)
+        {
+            var claims = new ClaimsIdentity();
 
-        //     claims.AddClaim(new Claim("User", user));
+            claims.AddClaim(new Claim("UserId", user.UserId.ToString()));
 
-        //     return claims;
-        // }
+            return claims;
+        }
     }
 }

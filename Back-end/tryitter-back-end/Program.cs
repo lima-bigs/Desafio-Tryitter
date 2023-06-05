@@ -38,10 +38,9 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// Adicionar POLICY CLAIMS BASED aqui!
 builder.Services.AddAuthorization (options => {
     options.AddPolicy("Usuario", policy => {
-    policy.RequireClaim("User");
+    policy.RequireClaim("UserId");
     });
 });
 
@@ -55,18 +54,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseCors(c =>
 {
     c.AllowAnyHeader();
     c.AllowAnyMethod();
     c.AllowAnyOrigin();
 });
-
 app.UseAuthentication();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
