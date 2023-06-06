@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using tryitter_back_end.Models;
 using tryitter_back_end.Repositories;
@@ -15,17 +16,19 @@ public class UserController : ControllerBase
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<User>> Get(int id)
         {
             var user = await _repository.Get(id);
             if (user == null)
             {
-                return NotFound("Usuário com id:{id} não existe.");
+                return NotFound($"Usuário com id:{id} não existe.");
             }
             return Ok(user);
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<List<User>>> GetAll()
         {
             return Ok(await _repository.GetAll());
@@ -38,7 +41,9 @@ public class UserController : ControllerBase
 
             return StatusCode(201, addedUser);
         }
+        
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> Update(int id, User user)
         {
             var userInDb = await _repository.Get(id);
@@ -57,6 +62,7 @@ public class UserController : ControllerBase
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
             var userInDb = await _repository.Get(id);

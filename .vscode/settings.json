@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/eb2ac330-09bb-4f29-9730-940912379088/resourceGroups/Tryitter/providers/Microsoft.Web/sites/tryitter-app",
+    "appService.deploySubpath": "."
+}

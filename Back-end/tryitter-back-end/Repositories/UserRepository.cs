@@ -39,5 +39,14 @@ namespace tryitter_back_end.Repositories
       _context.Update(user);
       await _context.SaveChangesAsync();
     }
+    public virtual async Task<User>? UserVerify(User user)
+    {
+      var userInDb = await _context.Users.FirstOrDefaultAsync(x => x.Email == user.Email);
+      
+      if (userInDb == null) return null;
+      if (userInDb.Password != user.Password) throw new ArgumentException("Senha incorreta");
+
+      return userInDb;
+    }
   }
 }
