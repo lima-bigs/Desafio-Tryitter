@@ -16,6 +16,9 @@ public class PostController : ControllerBase
             _repository = repository;
         }
 
+        /// <summary>
+        /// Busca o post pelo seu id. Deve enviar o token no headers Authorization : Bearer (token).
+        /// </summary>
         [HttpGet("{id}")]
         public async Task<ActionResult<Post>> Get(int id)
         {
@@ -27,6 +30,9 @@ public class PostController : ControllerBase
             return Ok(post);
         }
 
+        /// <summary>
+        /// Busca todos os posts de um usuário pelo seu id. Deve enviar o token no headers Authorization : Bearer (token).
+        /// </summary>
         [HttpGet("user/{id}")]
         public async Task<ActionResult<List<Post>>> GetByUser(int id)
         {
@@ -38,12 +44,18 @@ public class PostController : ControllerBase
             return Ok(posts);
         }
 
+        /// <summary>
+        /// Busca todos os posts. Deve enviar o token no headers Authorization : Bearer (token).
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<List<Post>>> GetAll()
         {
             return Ok(await _repository.GetAll());
         }
 
+        /// <summary>
+        /// Cria um novo post. Deve enviar o token no headers Authorization : Bearer (token).
+        /// </summary>
         [HttpPost]
         public async Task<ActionResult> Add(Post post)
         {
@@ -51,6 +63,10 @@ public class PostController : ControllerBase
 
             return StatusCode(201, addedpost);
         }
+
+        /// <summary>
+        /// Atualiza um post pelo id e passando novos dados no body. Deve enviar o token no headers Authorization : Bearer (token).
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, Post post)
         {
@@ -67,6 +83,9 @@ public class PostController : ControllerBase
             return Ok("Post atualizado com sucesso");
         }
 
+        /// <summary>
+        /// Apaga um post pelo id. Deve enviar o token no headers Authorization : Bearer (token).
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

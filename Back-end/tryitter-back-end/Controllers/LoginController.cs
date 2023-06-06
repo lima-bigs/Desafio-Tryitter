@@ -17,6 +17,9 @@ public class LoginController : ControllerBase
         _repository = repository;
     }
 
+    /// <summary>
+    /// Faz login passando email e senha, retornando o usuário e o token para acessar as demais rotas.
+    /// </summary>
     [HttpPost]
     public async Task<ActionResult<LoginResponse>> Login(User user)
     {
