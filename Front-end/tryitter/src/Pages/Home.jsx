@@ -7,9 +7,9 @@ import { PostsUser } from '../Services/Request';
 
 function Home() {
   const [search, setSearch] = useState('');
-  const [data, SetData] = useState('');
+  const [data, SetData] = useState([]);
   const [openModal, setOpenModal] = useState(false);
-  const id = 1;
+  const [isOk, setIsOk] = useState(false);
 
   const handleClickAdd = () => {
     console.log('Adicionar novo post');
@@ -20,13 +20,15 @@ function Home() {
     console.log('pesquisar');
   };
 
-  const api = async () => {
-    const posts = await PostsUser('/post/user/', id);
+  const api = async (user) => {
+    const posts = await PostsUser(`/post/user/${user.user.userId}`, `Bearer ${user.token}`);
     SetData(posts);
+    setIsOk(true);
   };
 
   useEffect(() => {
-    api();
+    const user = JSON.parse(localStorage.getItem('user'));
+    api(user);
   }, []);
 
   return (
@@ -48,13 +50,12 @@ function Home() {
           />
           <Button click={handleClickSeach} sty="ms-1 fw-bold">Pesquisar</Button>
         </div>
-        <main>
+        <main className="row">
           {/* Realizar o map para percorrer a lista e mandar para o card */}
           {
-            console.log(data)
+            isOk && data.map((item) => <Card item={item} />)
             // data.map((item) => <Card item={item} />)
           }
-          <Card item="" />
         </main>
       </div>
     </div>
