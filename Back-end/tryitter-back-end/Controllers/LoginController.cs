@@ -4,7 +4,7 @@ using tryitter_back_end.Models;
 using tryitter_back_end.Repositories;
 using tryitter_back_end.Services;
 
-namespace tryitter_back_end.Controllers;
+namespace tryitter_back_end.test;
 
 [ApiController]
 [Route("login")]

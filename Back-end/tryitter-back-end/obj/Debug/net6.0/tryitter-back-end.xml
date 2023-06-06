@@ -4,7 +4,7 @@
         <name>tryitter-back-end</name>
     </assembly>
     <members>
-        <member name="M:tryitter_back_end.Controllers.LoginController.Login(tryitter_back_end.Models.User)">
+        <member name="M:tryitter_back_end.test.LoginController.Login(tryitter_back_end.Models.User)">
             <summary>
             Faz login passando email e senha, retornando o usuário e o token para acessar as demais rotas.
             </summary>
