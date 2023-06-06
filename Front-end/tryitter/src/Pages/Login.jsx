@@ -12,14 +12,13 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [msgErro, setMsgErro] = useState(false);
-  const { MIN_PASSWORD_LANGTH } = useContext(MyContext);
-  const { active, setActive } = useContext(MyContext);
+  const { MIN_PASSWORD_LANGTH, active, setActive } = useContext(MyContext);
 
   const handleClick = async () => {
     try {
       if (isValidEmail(email) && isValidPassword(password, MIN_PASSWORD_LANGTH)) {
         const body = { email, password };
-        const login = await loginUser('/user', body);
+        const login = await loginUser('/login', body);
         setMsgErro('');
         localStorage.setItem('user', JSON.stringify(login));
         setActive(!active);

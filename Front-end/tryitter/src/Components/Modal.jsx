@@ -5,15 +5,15 @@ import Button from './Button';
 function Modal({ open, onClose }) {
   if (!open) return null;
   return (
-    <div className="">
-      <div>
+    <div className="modalContainer p-3">
+      <div className="text-end">
+        <Button click={onClose}>X</Button>
+      </div>
+      <div className="bt-3">
         hsuahsuahusa
         <p>hdaushduashda</p>
         <p>hdaushduashda</p>
         <p>hdaushduashda</p>
-      </div>
-      <div className="text-end border border-success modalContainer">
-        <Button click={onClose}>X</Button>
       </div>
     </div>
   );
@@ -21,7 +21,7 @@ function Modal({ open, onClose }) {
 
 Modal.propTypes = {
   open: PropTypes.bool.isRequired,
-  onClose: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default Modal;

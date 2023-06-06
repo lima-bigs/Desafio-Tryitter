@@ -2,36 +2,46 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../Components/Button';
 import Input from '../Components/Input';
+import { loginUser } from '../Services/Request';
+
 import MyContext from '../MyContext/MyContext';
-import {
-  isValidEmail,
-  isValidPassword,
-  isValidName,
-} from '../Utils/Validacao';
+import { isValidEmail, isValidPassword } from '../Utils/Validacao';
 
 function Cadastro() {
   const history = useNavigate();
-  const [nome, setNome] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [modulo, setModulo] = useState('');
   const [status, setStatus] = useState('');
 
   const [msgErro, setMsgErro] = useState(false);
-  const { MIN_PASSWORD_LANGTH } = useContext(MyContext);
+  const { MIN_PASSWORD_LANGTH, active, setActive } = useContext(MyContext);
 
-  const handleClick = () => {
-    if (
-      isValidEmail(email)
-      && isValidPassword(password, MIN_PASSWORD_LANGTH)
-      && isValidName(nome)
-    ) {
-      console.log('ok');
-      setMsgErro(false);
-      history('/home');
-    } else {
-      setMsgErro(true);
+  const handleClick = async () => {
+    console.log('clicado');
+    try {
+      console.log('dentro do try');
+      if (isValidEmail(email) && isValidPassword(password, 6)) {
+        console.log('ifffffffff');
+        const body = {
+          name, password, email, modulo, status,
+        };
+        const login = await loginUser('/user', body);
+        console.log(login);
+        setMsgErro('');
+        localStorage.setItem('user', JSON.stringify(login));
+        setActive(!active);
+        setEmail('');
+        setPassword('');
+        setName('');
+        setModulo('');
+        history('/home');
+      }
+    } catch (error) {
+      setMsgErro(true, error);
     }
+    console.log('sair');
   };
 
   return (
@@ -42,8 +52,8 @@ function Cadastro() {
           <Input
             type="text"
             name="Nome"
-            handleChange={(e) => setNome(e.target.value)}
-            value={nome}
+            handleChange={(e) => setName(e.target.value)}
+            value={name}
           />
 
           <Input
@@ -72,6 +82,7 @@ function Cadastro() {
           />
 
           <select className="form-select mt-3 ver" value={status} onChange={(e) => setStatus(e.target.value)}>
+            <option value="">== Escolher ==</option>
             <option value="andamento">Em andamento</option>
             <option value="finalizado">Finalizado</option>
           </select>
