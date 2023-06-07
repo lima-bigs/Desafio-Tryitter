@@ -17,6 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyProductAttribute("tryitter-back-end")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tryitter-back-end")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("app.Test")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
 

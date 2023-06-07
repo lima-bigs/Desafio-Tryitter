@@ -14,7 +14,10 @@ public class UserController : ControllerBase
         {
             _repository = repository;
         }
-
+        
+        /// <summary>
+        /// Busca o usuário pelo seu id. Deve enviar o token no headers Authorization : Bearer (token).
+        /// </summary>
         [HttpGet("{id}")]
         [Authorize]
         public async Task<ActionResult<User>> Get(int id)
@@ -27,6 +30,9 @@ public class UserController : ControllerBase
             return Ok(user);
         }
 
+        /// <summary>
+        /// Busca todos os usuários. Deve enviar o token no headers Authorization : Bearer (token).
+        /// </summary>
         [HttpGet]
         [Authorize]
         public async Task<ActionResult<List<User>>> GetAll()
@@ -34,7 +40,11 @@ public class UserController : ControllerBase
             return Ok(await _repository.GetAll());
         }
 
+        /// <summary>
+        /// Cria um novo usuário. Não requer o envio de token.
+        /// </summary>
         [HttpPost]
+        [AllowAnonymous]
         public async Task<ActionResult> Add(User user)
         {
             var addedUser = await _repository.Add(user);
@@ -42,6 +52,9 @@ public class UserController : ControllerBase
             return StatusCode(201, addedUser);
         }
         
+        /// <summary>
+        /// Atualiza um usuário pelo id e passando novos dados no body. Deve enviar o token no headers Authorization : Bearer (token).
+        /// </summary>
         [HttpPut("{id}")]
         [Authorize]
         public async Task<IActionResult> Update(int id, User user)
@@ -61,6 +74,9 @@ public class UserController : ControllerBase
             return Ok("Usuário atualizado com sucesso");
         }
 
+        /// <summary>
+        /// Apaga um usuário pelo id. Deve enviar o token no headers Authorization : Bearer (token).
+        /// </summary>
         [HttpDelete("{id}")]
         [Authorize]
         public async Task<IActionResult> Delete(int id)

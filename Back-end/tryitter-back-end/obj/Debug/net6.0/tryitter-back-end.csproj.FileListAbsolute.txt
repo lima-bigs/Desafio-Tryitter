@@ -6,6 +6,7 @@
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Debug/net6.0/tryitter-back-end.dll
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Debug/net6.0/ref/tryitter-back-end.dll
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Debug/net6.0/tryitter-back-end.pdb
+/home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Debug/net6.0/tryitter-back-end.xml
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Debug/net6.0/Azure.Core.dll
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Debug/net6.0/Azure.Identity.dll
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Debug/net6.0/Humanizer.dll
@@ -79,5 +80,6 @@
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/obj/Debug/net6.0/tryitter-back-end.csproj.CopyComplete
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/obj/Debug/net6.0/tryitter-back-end.dll
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/obj/Debug/net6.0/ref/tryitter-back-end.dll
+/home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/obj/Debug/net6.0/tryitter-back-end.xml
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/obj/Debug/net6.0/tryitter-back-end.pdb
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/obj/Debug/net6.0/tryitter-back-end.genruntimeconfig.cache
