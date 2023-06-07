@@ -21,6 +21,7 @@ public class TryitterLoginTest : IClassFixture<WebApplicationFactory<Program>>
 
   [Theory(DisplayName = "A rota /login deve responder com status code ok")]
   [InlineData("xxxxx@gmail.com", "xxxxxx")]
+  [InlineData("jose@gmail.com", "abacates")]
 
   public async Task RotaLoginRespondeErro(string email, string password)
   {
@@ -31,6 +32,13 @@ public class TryitterLoginTest : IClassFixture<WebApplicationFactory<Program>>
     var client = _factory.CreateClient();
     var response = await client.PostAsync("/login", body);
 
-    response.StatusCode.Should().Be(HttpStatusCode.NotFound);
+    if (password == "abacates")
+    {
+      response.StatusCode.Should().Be(HttpStatusCode.OK);
+    }
+    else
+    {
+      response.StatusCode.Should().Be(HttpStatusCode.NotFound);
+    }
   }
 }
