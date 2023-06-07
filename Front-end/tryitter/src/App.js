@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Routes from './Routes';
+import MyContext from './MyContext/MyContext';
+import { useState } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
+  const MIN_PASSWORD_LANGTH = 6;
+  const [loading, setLoading] = useState(false);
+  const [active, setActive] = useState(false);
+
+
+  const contextValue = {
+    MIN_PASSWORD_LANGTH,
+    loading, setLoading,
+    active, setActive
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MyContext.Provider value={contextValue}>
+      <div className="container">
+        <BrowserRouter>
+          <Routes />
+        </BrowserRouter>
+      </div>
+    </MyContext.Provider>
   );
 }
 

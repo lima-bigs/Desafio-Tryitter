@@ -1,38 +1,207 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.color-app {
+  background-color: rgb(251, 247, 247);
+}
+
+.width-input-login {
+  max-width: 300px;
+  margin: auto;
+}
+
+.txt-login {
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+
+.container-login {
   text-align: center;
+  border-radius: 10px;
+  max-width: 320px;
+  box-shadow: 10px 10px 5px rgb(193, 190, 190);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.txt-cadastro {
+  font-size: 0.8em;
+  margin: 30px 10px 0px 10px;
+  border-top: 1px solid rgb(204, 200, 200);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cadastrar {
+  margin-bottom: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.min-password {
+  font-size: 0.7em;
+}
+
+/* Cadastro */
+.adjustment-height {
+  margin-top: -13px;
+}
+
+.width-input-cadastro {
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+/* Header */
+.header-color {
+  background-color: rgb(245, 242, 242);
+}
+
+/* Loja */
+.height {
+  height: 70px;
+  line-height: 70px;
+  padding: 5px;
+}
+
+.logo {
+  width: 150px;
+}
+
+.logo a img {
+  width: 90%;
+}
+
+.filtar-and-cart {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 5px;
+  line-height: 20px;
+}
+.filtar-and-cart img {
+  width: 100%;
+}
+
+.btn-filter-cart {
+  background-color: transparent;
+  border: none;
+}
+.btn-filter-cart:hover {
+  background-color: transparent;
+  border: none;
+}
+
+.img {
+  width: 40%;
+}
+
+/* Parte de filtros */
+.valor-filtro {
+  color: red;
+  font-size: 1.2em;
+  font-weight: 800;
+  margin-left: 6px;
+}
+
+.simbulo {
+  font-size: 0.8em;
+  margin: 3px;
+  font-weight: 800;
+}
+
+/* carrinho de compras */
+.carrinho-compras {
+  box-shadow: 10px 10px 5px rgb(193, 190, 190);
+  border-radius: 10px;
+  position: absolute;
+  right: 1px;
+  top: 72px;
+  width: 350px;
+  background-color: rgb(227, 223, 223);
+  opacity: 93%;
+  z-index: 1;
+}
+.card-carrinho {
+  padding: 15px;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(194, 187, 187);
+}
+.card-carrinho img {
+  width: 90%;
+  margin: auto;
+}
+.card-carrinho .title {
+  font-size: 0.9em;
+}
+.card-carrinho .price {
+  font-size: 0.8em;
+}
+.remover {
+  font-size: 0.7em;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 60px;
+  height: 20px;
+}
+.remover:hover {
+  border: none;
+}
+.totalPrice {
+  border: 1px solid red;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(213, 33, 33);
   color: white;
+  font-weight: 900;
 }
 
-.App-link {
-  color: #61dafb;
+/* Card Produtos */
+.card {
+  max-width: 300px;
+  padding: 10px 5px;
+  border: 1px solid rgb(192, 185, 185);
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-title {
+  text-shadow: 3px 3px black;
+  font-size: 25px;
+}
+
+.card-img {
+  width: 100%;
+  margin: auto;
+}
+.card-produto .title {
+  font-size: 1.2em;
+}
+
+.btn-detalhe {
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: black;
+
+}
+
+.modalContainer {
+  max-width: 600px;
+  width: 100%;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* display: flex; */
+  background-color: white;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  z-index: 2;
+}
+
+/* Telas pequenas */
+@media only screen and (max-width: 600px) {
+
 }
