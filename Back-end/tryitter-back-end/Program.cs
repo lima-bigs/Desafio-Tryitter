@@ -29,10 +29,22 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(xmlPath);
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Name = "Authorization",
         In = ParameterLocation.Header,
+        Name = "Authorization",
         Type = SecuritySchemeType.ApiKey,
+        BearerFormat = "JWT",
         Scheme = "Bearer"
+    });
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement{
+        {
+            new OpenApiSecurityScheme{
+                Reference = new OpenApiReference {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[]{}
+        }
     });
 });
 

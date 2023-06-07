@@ -44,6 +44,7 @@ public class UserController : ControllerBase
         /// Cria um novo usuário. Não requer o envio de token.
         /// </summary>
         [HttpPost]
+        [AllowAnonymous]
         public async Task<ActionResult> Add(User user)
         {
             var addedUser = await _repository.Add(user);
