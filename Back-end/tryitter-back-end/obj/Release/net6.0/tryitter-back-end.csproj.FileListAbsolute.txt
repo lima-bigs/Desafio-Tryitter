@@ -81,5 +81,3 @@
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/obj/Release/net6.0/tryitter-back-end.pdb
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/obj/Release/net6.0/tryitter-back-end.genruntimeconfig.cache
 /home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Release/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
-/home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/bin/Release/net6.0/tryitter-back-end.xml
-/home/bigs/AceleracaoCsharp/Desafio-Tryitter/Back-end/tryitter-back-end/obj/Release/net6.0/tryitter-back-end.xml
