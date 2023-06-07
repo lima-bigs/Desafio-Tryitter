@@ -8,12 +8,8 @@ const loginUser = async (endpoint, body) => {
   return data;
 };
 
-const PostsUserid = async (endpoint, params) => {
-  console.log(endpoint);
-  console.log(params);
-  console.log(`${baseURL}${endpoint}${params}`);
-  const result = await axios.get(`${baseURL}${endpoint}${params}`);
-  console.log('>>>>>', result.data);
+const Post = async (endpoint, body, Authorization) => {
+  const result = await axios.post((baseURL + endpoint), body, { headers: { Authorization } });
   return result;
 };
 
@@ -25,5 +21,5 @@ const PostsUser = async (endpoint, Authorization) => {
 export {
   loginUser,
   PostsUser,
-  PostsUserid,
+  Post,
 };

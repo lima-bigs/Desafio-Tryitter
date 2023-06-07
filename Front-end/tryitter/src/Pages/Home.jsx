@@ -53,7 +53,7 @@ function Home() {
         <main className="row">
           {/* Realizar o map para percorrer a lista e mandar para o card */}
           {
-            isOk && data.map((item) => <Card item={item} />)
+            isOk && data.map((item) => <Card item={item} key={item.postId} />)
             // data.map((item) => <Card item={item} />)
           }
         </main>
