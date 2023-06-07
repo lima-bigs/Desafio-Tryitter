@@ -28,8 +28,6 @@ namespace tryitter_back_end.Repositories
 
     public virtual async Task<Post> Add(Post post)
     {
-      // var user = await _context.Users.FindAsync(post.UserId);
-      // post.User = user;
       await _context.Posts.AddAsync(post);
       await _context.SaveChangesAsync();
 
