@@ -12,7 +12,6 @@ function Home() {
   const [isOk, setIsOk] = useState(false);
 
   const handleClickAdd = () => {
-    console.log('Adicionar novo post');
     setOpenModal(true);
   };
 
@@ -51,10 +50,8 @@ function Home() {
           <Button click={handleClickSeach} sty="ms-1 fw-bold">Pesquisar</Button>
         </div>
         <main className="row">
-          {/* Realizar o map para percorrer a lista e mandar para o card */}
           {
             isOk && data.map((item) => <Card item={item} key={item.postId} />)
-            // data.map((item) => <Card item={item} />)
           }
         </main>
       </div>

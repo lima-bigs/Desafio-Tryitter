@@ -19,16 +19,12 @@ function Cadastro() {
   const { MIN_PASSWORD_LANGTH, active, setActive } = useContext(MyContext);
 
   const handleClick = async () => {
-    console.log('clicado');
     try {
-      console.log('dentro do try');
       if (isValidEmail(email) && isValidPassword(password, 6)) {
-        console.log('ifffffffff');
         const body = {
           name, password, email, modulo, status,
         };
         const login = await loginUser('/user', body);
-        console.log(login);
         setMsgErro('');
         localStorage.setItem('user', JSON.stringify(login));
         setActive(!active);
@@ -41,7 +37,6 @@ function Cadastro() {
     } catch (error) {
       setMsgErro(true, error);
     }
-    console.log('sair');
   };
 
   return (

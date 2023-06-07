@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Card({ item }) {
-  console.log(item);
   return (
     <article className="shadow m-2 bg-body card text-center col-4">
       <div className="card text-bg-dark">
