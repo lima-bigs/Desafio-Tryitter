@@ -40,7 +40,7 @@ function Cadastro() {
   };
 
   return (
-    <main className="container-login container position-absolute top-50 start-50 translate-middle">
+    <main className="container-login container position-absolute top-50 start-50 translate-middle border border-dark p-3">
       <div className="width-input-cadastro">
         <h1 className="txt-login">Cadastro</h1>
         <section>

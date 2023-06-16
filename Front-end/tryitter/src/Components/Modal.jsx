@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { Post } from '../Services/Request';
 import Button from './Button';
 import Input from './Input';
@@ -8,7 +8,7 @@ import Input from './Input';
 function Modal({ open, onClose }) {
   if (!open) return null;
 
-  const history = useNavigate();
+  // const history = useNavigate();
   const [content, setContent] = useState('');
   const [image, setImage] = useState('');
   const [user, setUser] = useState('');
@@ -18,13 +18,13 @@ function Modal({ open, onClose }) {
       const { userId, token } = user;
       const body = { content, image, userId };
       await Post('/post', body, `Bearer ${token}`);
-      history('/home');
     } catch (error) {
       console.log(error);
     }
   };
 
   const converterImagem = (e) => {
+    console.log('112');
     const data = new FileReader();
     data.addEventListener('load', () => {
       setImage(data.result);
@@ -39,7 +39,7 @@ function Modal({ open, onClose }) {
   }, []);
 
   return (
-    <div className="modalContainer p-3">
+    <div className="modalContainer p-3 rounded position-absolute top-50 start-50 translate-middle">
       <div className="text-end">
         <Button click={onClose}>X</Button>
       </div>
@@ -47,12 +47,7 @@ function Modal({ open, onClose }) {
         <h3>Criar um novo Post</h3>
       </div>
       <div className="bt-3">
-        <input type="file" onChange={converterImagem} />
-        {/* <Input
-          type="file"
-          name="imagem"
-          handleChange={converterImagem}
-        /> */}
+        <input type="file" id="load" onChange={converterImagem} />
         <Input
           type="text"
           name="Texto"
